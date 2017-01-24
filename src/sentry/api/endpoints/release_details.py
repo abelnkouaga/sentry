@@ -90,11 +90,7 @@ class ReleaseDetailsEndpoint(ProjectEndpoint):
         except Release.DoesNotExist:
             raise ResourceDoesNotExist
 
-        serialized = serialize(release, request.user)
-        # now query for extra stuff and shove on serialized
-        # if has_feature: # figure out how to check features
-        #    serialized['num_commits']
-        return Response(serialized)
+        return Response(serialize(release, request.user))
 
     @attach_scenarios([update_release_scenario])
     def put(self, request, project, version):
