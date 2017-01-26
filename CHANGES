@@ -12,6 +12,12 @@ Version 8.13 (Unreleased)
 - The legacy API keys feature is now disabled by default.
 - Show Images Loaded section for cocoa events with version number.
 - Provide commit and author information associated with a given release
+- Fixed bug where workflow notification subject may not include a custom email prefix.
+- Added configurable subject templates for individual alert emails (`mail:subject_template` option).
+
+Schema Changes
+~~~~~~~~~~~~~~
+- Added ``ReleaseProject.new_groups`` column.
 
 Version 8.12
 ------------
